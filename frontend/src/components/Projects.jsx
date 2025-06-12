@@ -27,8 +27,8 @@ export default function Projects() {
     setError(null);
 
     Promise.all([
-      fetch('http://localhost:5000/api/projects?category=project').then((res) => res.json()),
-      fetch('http://localhost:5000/api/projects?category=basic project').then((res) => res.json()),
+      fetch('https://ashim-portfolio-backend.onrender.com/api/projects?category=project').then((res) => res.json()),
+      fetch('https://ashim-portfolio-backend.onrender.com/api/projects?category=basic project').then((res) => res.json()),
     ])
       .then(([mainData, basicData]) => {
         setMainProjects(mainData);

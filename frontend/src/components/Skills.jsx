@@ -7,7 +7,7 @@ export default function Skills() {
   useEffect(() => {
     const fetchSkills = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/skills");
+        const res = await axios.get("https://ashim-portfolio-backend.onrender.com/api/skills");
         setSkills(res.data);
       } catch (err) {
         console.error("Error fetching skills:", err);
