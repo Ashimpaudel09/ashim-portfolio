@@ -1,0 +1,65 @@
+/* Large screens: vertical sidebar */
+#navbar {
+  position: fixed;
+  top: 200px !important;
+  bottom: 20px;
+  left: 75px !important;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: transparent !important;
+  z-index: 999;
+  width: auto;
+  
+}
+
+#navbar a {
+  text-decoration: none;
+  font-weight: 500;
+  color: #e2e8f0;
+  padding-top: 20px;
+  transition: color 0.3s ease, font-weight 0.3s ease;
+}
+
+#navbar a.active {
+  color: #007bff;
+  font-weight: bold;
+}
+
+/* Small screens: horizontal top navbar */
+@media (max-width: 1023px) {
+  #navbar {
+    margin-top: 15rem;
+    position: sticky !important;
+    top: 0 !important;
+    left: 0 !important;
+    bottom: auto;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background: rgba(21, 28, 62, 0.9) !important;
+    padding: 12px 0;
+    width: 100%;
+    z-index: 10000;
+  }
+
+  #navbar a {
+    padding: 0 15px;
+    font-size: 14px;
+    opacity: 1;
+  }
+  #navbar a:hover{
+    color: rgb(131, 170, 196) !important;
+  }
+}
+
+/* Add margin-top to main content and welcome to avoid overlap */
+@media (max-width: 1023px) {
+  #main-content,
+  #welcome {
+    position: relative;
+     /* height of navbar plus some spacing */
+     margin-top: -05rem !important;
+  }
+}

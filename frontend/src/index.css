@@ -1,0 +1,234 @@
+@import "tailwindcss";
+
+.input {
+  @apply bg-gray-700 text-white rounded px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500;
+}
+
+.btn-green {
+  @apply bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded shadow;
+}
+
+.btn-blue {
+  @apply bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded shadow;
+}
+
+.btn-gray {
+  @apply bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded shadow;
+}
+
+/* Neuron background */
+#neuron-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  background: radial-gradient(circle at center, #0a0a14, #000000 80%);
+}
+#neuron-canvas::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(circle at center, rgba(10,10,30,0.15), transparent 80%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Intro block: initially centered */
+#intro-block {
+  user-select: none;
+  pointer-events: auto;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  transition: all 1.2s ease;
+  color: #cbd5e1; /* light gray */
+  text-align: center;
+  text-shadow: 0 0 8px #1e40af; /* navy glow */
+}
+
+/* After intro finishes: move intro block to top center */
+#intro-block.moved {
+  font-weight: 700; /* a bit bolder */
+  font-size: 2.5rem;
+  position: relative;
+  top: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 3.8rem;
+  margin-top: 3.5rem;
+  pointer-events: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  background: transparent;
+  color: #a0aec0;
+  text-shadow: 0 0 6px #1e40af;
+  transition: all 0.8s ease;
+}
+
+/* Image styles and responsive sizes */
+#intro-block img {
+  width: 180px;
+  height: 180px;
+  border-radius: 9999px;
+  object-fit: cover;
+  box-shadow: 0 0 20px rgba(30, 64, 175, 0.7);
+  border: 4px solid #1e40af;
+  transition: all 0.8s ease;
+}
+
+@media (min-width: 768px) {
+  #intro-block img {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+@media (min-width: 1024px) {
+  #intro-block img {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+#intro-block.moved img:hover {
+  box-shadow: 0 0 30px rgba(30, 64, 175, 1);
+}
+
+/* Description text */
+#intro-block .description {
+  font-weight: 500;
+  font-size: 2.7rem;
+  color: #a0aec0;
+  user-select: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0;
+  padding: 0;
+}
+
+/* Small text */
+#intro-block small {
+  font-size: 1.25rem; /* bigger below text */
+  font-weight: 500;
+  color: #cbd5e1;
+  margin-bottom: 1.5rem;
+  padding: 0;
+}
+
+/* Main content hidden by default and fades in */
+#main-content {
+  position: relative;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 1s ease 1.4s;
+  z-index: 20;
+  color: #e0e7ff;
+  
+}
+
+#main-content.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Navbar styling */
+#navbar a:hover {
+  color: rgb(100, 59, 224);
+}
+
+#welcome {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#welcome h2 {
+  font-size: 60px;
+}
+
+/* Stylish Enter My World button */
+.btn-transparent {
+  display: block;
+  background: transparent;
+  border: 2px solid #1e40af;
+  color: #a0aec0;
+  padding: 0.6rem 1.75rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1.1rem;
+  letter-spacing: 0.05em;
+  user-select: none;
+  margin-top: 1.5rem;
+  position: relative;
+  overflow: hidden;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.2s ease;
+  box-shadow: 0 0 8px rgba(30, 64, 175, 0.6);
+  animation: pulse 3s infinite ease-in-out;
+  display: inline-block;
+}
+
+/* Pulse animation - subtle glowing effect */
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 0 8px rgba(30, 64, 175, 0.6);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 16px rgba(30, 64, 175, 0.9);
+    transform: scale(1.05);
+  }
+}
+
+.btn-transparent:hover {
+  background-color: #1e40af;
+  color: white;
+  box-shadow: 0 0 20px rgba(30, 64, 175, 1);
+  transform: scale(1.1);
+}
+
+/* Ripple effect container */
+.btn-transparent::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.3);
+  top: 50%;
+  left: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+  transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+/* Show ripple on active click */
+.btn-transparent:active::after {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+  transition: 0s;
+}
+
+/* Hide the button when intro block is moved with fade out */
+#intro-block.moved .btn-transparent {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.6s ease;
+}
