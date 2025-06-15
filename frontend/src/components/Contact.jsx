@@ -16,7 +16,7 @@ export default function Contact() {
     setResponseMsg("");
 
     try {
-      const res = await fetch("/api/contact", {
+      const res = await fetch("https://ashim-portfolio-backend.onrender.com/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
@@ -93,13 +93,13 @@ export default function Contact() {
         )}
 
         <div className="flex items-center justify-center gap-6 pt-4">
-          <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
+          <a href="https://github.com/Ashimpaudel09" target="_blank" rel="noopener noreferrer">
             <FaGithub className="text-2xl text-gray-300 hover:text-white" />
           </a>
-          <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.linkedin.com/in/ashim-paudel-620ab4341/" target="_blank" rel="noopener noreferrer">
             <FaLinkedin className="text-2xl text-gray-300 hover:text-white" />
           </a>
-          <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer">
+          <a href="https://twitter.com/#" target="_blank" rel="noopener noreferrer">
             <FaTwitter className="text-2xl text-gray-300 hover:text-white" />
           </a>
         </div>
