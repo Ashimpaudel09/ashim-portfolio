@@ -48,8 +48,7 @@ export default function Skills() {
       <div
         className="
           grid gap-8 max-w-6xl mx-auto
-          grid-cols-1
-          xs:grid-cols-2
+          grid-cols-2
           sm:grid-cols-2
           md:grid-cols-2  /* 2 columns on medium */
           lg:grid-cols-3  /* 3 columns only on large and above */
