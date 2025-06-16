@@ -9,7 +9,6 @@ import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Welcome from "./components/Welcome";
-import AdminPanel from "./components/AdminPanel";
 
 export default function App() {
   const [introDone, setIntroDone] = useState(false);
@@ -23,8 +22,6 @@ export default function App() {
   return (
     <Router>
       <Routes>
-        {/* Admin panel route, no intro, navbar etc. */}
-        <Route path="/adminpanel" element={<AdminPanel />} />
 
         {/* Main app route */}
         <Route
@@ -45,12 +42,11 @@ export default function App() {
                   <>
                     <Welcome />
                     <Navbar />
-                    
-                          <About />
-                          <Skills />
-                          <Projects />
-                          <Contact />
-                    
+                    <About />
+                    <Skills />
+                    <Projects />
+                    <Contact />
+
                   </>
                 )}
               </main>

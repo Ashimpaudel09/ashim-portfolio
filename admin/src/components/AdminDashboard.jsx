@@ -218,7 +218,7 @@ export default function AdminDashboard({ token }) {
 
   return (
     <div className="max-w-6xl mx-auto p-6 text-white space-y-16 font-sans">
-      <h1 className="text-4xl font-extrabold text-center tracking-wide mb-12">
+      <h1 className="text-6xl font-extrabold text-center tracking-wide mb-12">
         Admin Dashboard
       </h1>
 
