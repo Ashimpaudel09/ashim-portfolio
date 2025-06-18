@@ -114,7 +114,7 @@ export default function Projects() {
                       href={normalizeUrl(link1)}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-blue-400 hover:underline text-sm sm:text-base font-semibold mt-2"
+                      className="text-blue-400 hover:underline text-sm sm:text-base font-semibold mt-2 ml-6"
                     >
                       Github Link →
                     </a>
@@ -159,7 +159,7 @@ export default function Projects() {
                     href={normalizeUrl(link)}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-blue-500 text-base hover:underline font-medium"
+                    className="text-blue-500 text-base hover:underline font-medium ml-6"
                   >
                     Github Link →
                   </a>
