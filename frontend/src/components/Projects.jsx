@@ -74,7 +74,7 @@ export default function Projects() {
             {type}
           </h3>
           <div className="grid grid-cols-2 xs:grid-cols-2 md:grid-cols-2 sm:grid-cols-2 xl:grid-cols-2 gap-8 w-full">
-            {projects.map(({ _id, title, description, link,link1, image, languages = [] }) => (
+            {projects.map(({ _id, title, description, link,link1, image, languages, technologies = [] }) => (
               <div
                 key={_id}
                 className="group grid grid-cols-1 md:grid-cols-[40%_60%] rounded-2xl overflow-hidden shadow-lg
@@ -98,6 +98,9 @@ export default function Projects() {
                   <p className="text-gray-300 text-sm sm:text-base leading-relaxed">{description}</p>
                   <div className="text-sm text-gray-400">
                     <span className="font-medium">Languages:</span> {languages.join(', ')}
+                  </div>
+                  <div className="text-sm text-gray-400">
+                    <span className="font-medium">Languages:</span> {technologies.join(', ')}
                   </div>
                   <div className="flex gap-4 mt-4">
   {link && (
