@@ -7,6 +7,7 @@ const projectSchema = new mongoose.Schema({
   languages: [String],
   image: String,
   link: String,
+  link1:Sring,
   category: { type: String, default: 'project' },
 
   // 🆕 Optional projectType only if category === 'project'
