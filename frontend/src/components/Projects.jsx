@@ -123,7 +123,7 @@ export default function Projects() {
             Other Basic Projects
           </h3>
           <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {basicProjects.map(({ _id, title, link }) => (
+            {basicProjects.map(({ _id, title, link, description }) => (
               <div
                 key={_id}
                 className="p-6 rounded-2xl shadow-lg
@@ -133,6 +133,7 @@ export default function Projects() {
                 title={title}
               >
                 <h4 className="text-lg sm:text-xl font-medium text-blue-400 mb-3">{title}</h4>
+                <p className="text-gray-300 text-sm sm:text-base leading-relaxed">{description}</p>
                 {link && (
                   <a
                     href={normalizeUrl(link)}
