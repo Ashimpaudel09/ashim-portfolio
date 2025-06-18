@@ -133,7 +133,7 @@ export default function Projects() {
             Other Basic Projects
           </h3>
           <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {basicProjects.map(({ _id, title, link, description }) => (
+            {basicProjects.map(({ _id, title, link,link1, description }) => (
               <div
                 key={_id}
                 className="p-6 rounded-2xl shadow-lg
@@ -151,7 +151,17 @@ export default function Projects() {
                     rel="noopener noreferrer"
                     className="text-blue-500 text-base hover:underline font-medium"
                   >
-                    View →
+                    View project →
+                  </a>
+                )}
+                 {link && (
+                  <a
+                    href={normalizeUrl(link)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-500 text-base hover:underline font-medium"
+                  >
+                    Github Link →
                   </a>
                 )}
               </div>
