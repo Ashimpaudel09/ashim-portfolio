@@ -22,6 +22,7 @@ export default function AdminDashboard({ token }) {
     languages: "",
     image: "",
     link: "",
+    link1:"",
     category: "project",
     projectType: "",
   });
@@ -40,6 +41,7 @@ export default function AdminDashboard({ token }) {
     languages: "",
     image: "",
     link: "",
+    link1:"",
     category: "project",
     projectType: "",
   });
@@ -153,6 +155,7 @@ export default function AdminDashboard({ token }) {
         languages: "",
         image: "",
         link: "",
+        link1:"",
         category: "project",
         projectType: "",
       });
@@ -194,6 +197,7 @@ export default function AdminDashboard({ token }) {
         languages: "",
         image: "",
         link: "",
+        link1:"",
         category: "project",
         projectType: "",
       });
@@ -538,6 +542,19 @@ export default function AdminDashboard({ token }) {
               className="input px-3 py-2 rounded-md bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-green-500"
             />
           </div>
+           <div className="flex flex-col">
+            <label htmlFor="newProjectLink1" className="mb-1 text-gray-300 font-medium">
+              Github Link
+            </label>
+            <input
+              id="newProjectLink1"
+              type="url"
+              placeholder="https://example.com"
+              value={newProject.link1}
+              onChange={(e) => setNewProject({ ...newProject, link1: e.target.value })}
+              className="input px-3 py-2 rounded-md bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-green-500"
+            />
+          </div>
 
           <div className="flex flex-col">
             <label htmlFor="newProjectCategory" className="mb-1 text-gray-300 font-medium">
@@ -710,6 +727,23 @@ export default function AdminDashboard({ token }) {
                       className="input px-3 py-2 rounded-md bg-gray-700 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-green-500"
                     />
                   </div>
+                    <div className="flex flex-col">
+                    <label
+                      htmlFor={`editProjectLink1-${project._id}`}
+                      className="mb-1 text-gray-300 font-medium"
+                    >
+                      Github Link
+                    </label>
+                    <input
+                      id={`editProjectLink1-${project._id}`}
+                      type="url"
+                      value={editedProject.link1}
+                      onChange={(e) =>
+                        setEditedProject({ ...editedProject, link1: e.target.value })
+                      }
+                      className="input px-3 py-2 rounded-md bg-gray-700 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-green-500"
+                    />
+                  </div>
 
                   <div className="flex flex-col">
                     <label
@@ -782,6 +816,7 @@ export default function AdminDashboard({ token }) {
                             languages: project.languages.join(", "),
                             image: project.image,
                             link: project.link,
+                            link1:project.link1,
                             category: project.category,
                             projectType: project.projectType || "",
                           });
@@ -822,6 +857,16 @@ export default function AdminDashboard({ token }) {
                       className="inline-block mt-4 text-green-500 underline"
                     >
                       Visit Project
+                    </a>
+                  )}
+                  {project.link1 && (
+                    <a
+                      href={project.link1}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block mt-4 text-green-500 underline"
+                    >
+                      Github Project
                     </a>
                   )}
                   <p className="mt-2 italic text-gray-400">
