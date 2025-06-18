@@ -74,7 +74,7 @@ export default function Projects() {
             {type}
           </h3>
           <div className="grid grid-cols-2 xs:grid-cols-2 md:grid-cols-2 sm:grid-cols-2 xl:grid-cols-2 gap-8 w-full">
-            {projects.map(({ _id, title, description, link, image, languages = [] }) => (
+            {projects.map(({ _id, title, description, link,link1, image, languages = [] }) => (
               <div
                 key={_id}
                 className="group grid grid-cols-1 md:grid-cols-[40%_60%] rounded-2xl overflow-hidden shadow-lg
@@ -107,6 +107,16 @@ export default function Projects() {
                       className="text-blue-400 hover:underline text-sm sm:text-base font-semibold mt-2"
                     >
                       View Project →
+                    </a>
+                  )}
+                   {link1 && (
+                    <a
+                      href={normalizeUrl(link1)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-400 hover:underline text-sm sm:text-base font-semibold mt-2"
+                    >
+                      Github Link →
                     </a>
                   )}
                 </div>
