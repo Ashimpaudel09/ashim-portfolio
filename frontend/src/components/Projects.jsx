@@ -99,26 +99,28 @@ export default function Projects() {
                   <div className="text-sm text-gray-400">
                     <span className="font-medium">Languages:</span> {languages.join(', ')}
                   </div>
-                  {link && (
-                    <a
-                      href={normalizeUrl(link)}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-blue-400 hover:underline text-sm sm:text-base font-semibold mt-2"
-                    >
-                      View Project →
-                    </a>
-                  )}
-                   {link1 && (
-                    <a
-                      href={normalizeUrl(link1)}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-blue-400 hover:underline text-sm sm:text-base font-semibold mt-2 ml-6"
-                    >
-                      Github Link →
-                    </a>
-                  )}
+                  <div className="flex gap-4 mt-4">
+  {link && (
+    <a
+      href={normalizeUrl(link)}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-blue-500 text-base hover:underline font-medium"
+    >
+      View project →
+    </a>
+  )}
+  {link1 && (
+    <a
+      href={normalizeUrl(link1)}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-blue-500 text-base hover:underline font-medium"
+    >
+      Github Link →
+    </a>
+  )}
+</div>
                 </div>
               </div>
             ))}
@@ -144,26 +146,28 @@ export default function Projects() {
               >
                 <h4 className="text-lg sm:text-xl font-medium text-blue-400 mb-3">{title}</h4>
                 <p className="text-gray-300 text-sm sm:text-base leading-relaxed">{description}</p>
-                {link && (
-                  <a
-                    href={normalizeUrl(link)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-blue-500 text-base hover:underline font-medium"
-                  >
-                    View project →
-                  </a>
-                )}
-                 {link && (
-                  <a
-                    href={normalizeUrl(link)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-blue-500 text-base hover:underline font-medium ml-6"
-                  >
-                    Github Link →
-                  </a>
-                )}
+                <div className="flex gap-4 mt-4">
+  {link && (
+    <a
+      href={normalizeUrl(link)}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-blue-500 text-base hover:underline font-medium"
+    >
+      View project →
+    </a>
+  )}
+  {link1 && (
+    <a
+      href={normalizeUrl(link1)}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-blue-500 text-base hover:underline font-medium"
+    >
+      Github Link →
+    </a>
+  )}
+</div>
               </div>
             ))}
           </div>
