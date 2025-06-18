@@ -100,7 +100,7 @@ export default function Projects() {
                     <span className="font-medium">Languages:</span> {languages.join(', ')}
                   </div>
                   <div className="text-sm text-gray-400">
-                    <span className="font-medium">Languages:</span> {technologies.join(', ')}
+                    <span className="font-medium">Technologies:</span> {technologies.join(', ')}
                   </div>
                   <div className="flex gap-4 mt-4">
   {link && (
