@@ -73,7 +73,7 @@ export default function Projects() {
           <h3 className="text-2xl sm:text-3xl font-semibold text-blue-300 mb-6 text-center sm:text-left">
             {type}
           </h3>
-          <div className="grid grid-cols-2 xs:grid-cols-2 md:grid-cols-2 sm:grid-cols-2 xl:grid-cols-2 gap-8 w-full">
+          <div className="grid grid-cols-2 xs:grid-cols-2 md:grid-cols-2 sm:grid-cols-2 xl:grid-cols-1 gap-8 w-full">
             {projects.map(({ _id, title, description, link,link1, image, languages, technologies = [] }) => (
               <div
                 key={_id}
